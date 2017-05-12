@@ -13,4 +13,16 @@ describe Brand do
     test_brand = Brand.new( name: "a".*(101) )
     expect(test_brand.save).to(eq false )
   end
+
+  # it 'validates princ input is in standard notation for American currancy and begins with a $ symbol' do
+  #   test_brand = Brand.create( name: 'Toms', price: 32.5 )
+  #   expect(test_brand.price).to(eq('$32.50'))
+  # end
+
+  describe '#to_currency' do
+    it 'ensures price input is in standard notation for American currancy and begins with a $ symbol' do
+      test_brand = Brand.create( name: 'Toms', price: 32 )
+      expect(test_brand.to_currency(test_brand.price)).to(eq('$32.00'))
+    end
+  end
 end
