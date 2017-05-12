@@ -17,7 +17,11 @@ end
 post '/add_store' do
   store_name = params["store_name"]
   @store = Store.create(name: store_name)
-  redirect '/add_store'
+  if @store.save
+    redirect '/add_store'
+  else
+    @error_message = "store name already added"
+  end
 end
 
 get '/store/:id' do
