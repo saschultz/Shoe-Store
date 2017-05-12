@@ -57,3 +57,8 @@ post '/add_brand' do
   @brand = Brand.create(name: brand_name, price: price)
   redirect 'add_brand'
 end
+
+get '/all_brands' do
+  @brands = Brand.all
+  erb :all_brands
+end

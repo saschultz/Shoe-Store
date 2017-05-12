@@ -19,9 +19,10 @@
     <% if @brands.any? %>
       <ul>
         <% @brands.each do |brand| %>
-          <li><%= brand.name %>, <em><%= brand.to_currency(brand.price) %></em></li>
+          <li><strong><%= brand.name %></strong> <em><%= brand.to_currency(brand.price) %></em></li>
         <% end %>
       </ul>
+
     <% else %>
       <p><em>no brands added</em></p>
     <% end %>

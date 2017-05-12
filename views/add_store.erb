@@ -15,7 +15,7 @@
     <% if @stores.any? %>
       <ul>
         <% @stores.each do |store| %>
-          <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+          <li><strong><a href="/store/<%= store.id %>"><%= store.name %></a></strong></li>
         <% end %>
       </ul>
       <p><em>click a store to edit/delete store, or to view shoe brands at that store</em></p>
