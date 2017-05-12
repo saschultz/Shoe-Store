@@ -69,3 +69,13 @@ get '/store/:id/add_brands' do
   @brands = Brand.all
   erb :add_brands_to_store
 end
+
+patch '/store/:id' do
+  store_id = params['id'].to_i
+  @store = Store.find(store_id)
+  current_ids = @store.brands.map(&:id)
+  brand_ids = params['brand_ids']
+  all_brands = current_ids + brand_ids
+  @store.update({:brand_ids => all_brands})
+  redirect "/store/#{store_id}"
+end

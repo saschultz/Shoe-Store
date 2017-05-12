@@ -1,7 +1,7 @@
-<h3>Shoe Brands</h3>
+<h3>Add Brands to <%= @store.name %></h3>
 
 <% if @brands.any? %>
-  <form action="/">
+  <form action="/store/<%= @store.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <% @brands.each do |brand| %>
       <div class="checkbox">
@@ -10,7 +10,7 @@
         </label>
       </div>
     <% end %>
-    <button type="submit">Add Brands to <%= @store.name %></button>
+    <button type="submit">Add</button>
   </form>
 <% else %>
   <p><em>there are no shoe brands added yet</em></p>
