@@ -9,6 +9,12 @@ describe Brand do
     expect(test_brand.update(name: ' ')).to(eq(false))
   end
 
+  it 'validates the brand name is unique before saving it' do
+    test_brand = Brand.create name: 'Vans'
+    test_brand2 = Brand.create name: 'Vans'
+    expect(test_brand2.save).to(eq(false))
+  end
+
   it 'ensures the length of a brand name is at most 100 characters' do
     test_brand = Brand.new( name: "a".*(101) )
     expect(test_brand.save).to(eq false )
