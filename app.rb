@@ -45,3 +45,15 @@ get '/all_stores' do
 end
 
 ## brand paths
+
+get '/add_brand' do
+  @brands = Brand.all
+  erb :add_brand
+end
+
+post '/add_brand' do
+  brand_name = params['brand_name']
+  price = params['price']
+  @brand = Brand.create(name: brand_name, price: price)
+  redirect 'add_brand'
+end
