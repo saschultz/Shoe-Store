@@ -62,3 +62,10 @@ get '/all_brands' do
   @brands = Brand.all
   erb :all_brands
 end
+
+## brands to stores paths
+get '/store/:id/add_brands' do
+  @store = Store.find(params['id'].to_i)
+  @brands = Brand.all
+  erb :add_brands_to_store
+end

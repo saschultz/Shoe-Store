@@ -1,0 +1,18 @@
+<h3>Shoe Brands</h3>
+
+<% if @brands.any? %>
+  <form action="/">
+    <input type="hidden" name="_method" value="patch">
+    <% @brands.each do |brand| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="brand_ids[]" value="<%= brand.id %>"><%= brand.name %>
+        </label>
+      </div>
+    <% end %>
+    <button type="submit">Add Brands to <%= @store.name %></button>
+  </form>
+<% else %>
+  <p><em>there are no shoe brands added yet</em></p>
+  <p><strong>Click <a href="/add_brand">here</a> to add a brand</strong></p>
+<% end %>
