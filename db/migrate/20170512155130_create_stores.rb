@@ -1,4 +1,4 @@
-class CreateStores.rb < ActiveRecord::Migration[5.1]
+class CreateStores < ActiveRecord::Migration[5.1]
   def change
     create_table :stores do |s|
       s.string :name

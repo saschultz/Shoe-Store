@@ -1,4 +1,4 @@
-class CreateBrandsStores.rb < ActiveRecord::Migration[5.1]
+class CreateBrandsStores < ActiveRecord::Migration[5.1]
   def change
     create_table :brands_stores do |b|
       b.integer :brand_id
