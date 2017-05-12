@@ -3,4 +3,9 @@ require 'spec_helper'
 describe Store do
   it { should have_and_belong_to_many(:brands) }
   it { is_expected.to callback(:title_case).before(:save)}
+
+  it 'validates presence of name in a store' do
+    test_store = Store.create name: 'SAS Shoes'
+    expect(test_store.update(name: ' ')).to(eq(false))
+  end
 end
