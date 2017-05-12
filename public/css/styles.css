@@ -1,0 +1,20 @@
+.jumbotron {
+  text-align: center;
+}
+
+a#title {
+  text-decoration: none;
+  color: black;
+}
+
+.layout-buttons {
+  height:22px;
+   width:100px;
+   position:relative;
+   /*top:50%;*/
+   /*left:120%;*/
+}
+
+.col-sm-3 {
+  text-align: center;
+}

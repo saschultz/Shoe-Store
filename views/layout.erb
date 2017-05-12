@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shoe Stores</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="/css/styles.css">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <a href="/" id="title">
+        <h1>Shoe Store Database</h1>
+      </a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 form-group">
+          <form action="/stores" method="get">
+            <button type="submit" class="layout-buttons">View Stores</button>
+          </form>
+        </div>
+        <div class="col-sm-3 form-group">
+          <form action="/shoes" method="get">
+            <button type="submit" class="layout-buttons">View Shoes</button>
+          </form>
+        </div>
+      </div>
+    <hr>
+      <%= yield %>
+      <br>
+      <input type="button" value="Back" onclick="history.back(-1)">
+    </div>
+  </body>
+</html>
