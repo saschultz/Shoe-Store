@@ -8,4 +8,9 @@ describe Store do
     test_store = Store.create name: 'SAS Shoes'
     expect(test_store.update(name: ' ')).to(eq(false))
   end
+
+  it 'ensures the length of a store name is at most 100 characters' do
+    test_store = Store.new( name: "a".*(101) )
+    expect(test_store.save).to(eq false )
+  end
 end
