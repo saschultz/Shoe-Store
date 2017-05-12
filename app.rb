@@ -59,7 +59,11 @@ post '/add_brand' do
   brand_name = params['brand_name']
   price = params['price']
   @brand = Brand.create(name: brand_name, price: price)
-  redirect 'add_brand'
+  if @brand.save
+    redirect 'add_brand'
+  else
+    @error_message = "brand name already added"
+  end
 end
 
 get '/all_brands' do
