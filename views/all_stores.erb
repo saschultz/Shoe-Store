@@ -1,0 +1,13 @@
+<h3>All Added Shoe Stores</h3>
+<% if @stores.any? %>
+<p><em>click a store to edit/delete store, or to view shoe brands at that store</em></p>
+  <ul>
+    <% @stores.each do |store| %>
+      <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+    <% end %>
+  </ul>
+  <p><strong>Click <a href="/add_store">here</a> to add another store</strong></p>
+<% else %>
+  <p><em>there are no shoe stores added yet</em></p>
+  <p><strong>Click <a href="/add_store">here</a> to add a store</strong></p>
+<% end %>

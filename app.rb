@@ -39,4 +39,9 @@ delete '/store/:id' do
   redirect '/add_store'
 end
 
+get '/all_stores' do
+  @stores = Store.all
+  erb :all_stores
+end
+
 ## brand paths
