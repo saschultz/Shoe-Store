@@ -1,13 +1,14 @@
 <h3>All Added Shoe Brands</h3>
 
 <% if @brands.any? %>
-<p><em>click a brand to view the shoe stores which sell that brands</em></p>
   <ul>
     <% @brands.each do |brand| %>
-      <li><strong><a href="/"><%= brand.name %></a></strong> <em><%= brand.to_currency(brand.price)%></em></li>
+      <li><strong><%= brand.name %></strong> <em><%= brand.to_currency(brand.price)%></em></li>
     <% end %>
   </ul>
   <p><strong>Click <a href="/add_brand">here</a> to add another brand</strong></p>
+  <p><strong>Click <a href="/all_stores">here</a> to view all stores</strong></p>
+
 <% else %>
   <p><em>there are no shoe brands added yet</em></p>
   <p><strong>Click <a href="/add_brand">here</a> to add a brand</strong></p>
