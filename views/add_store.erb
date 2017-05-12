@@ -1,0 +1,26 @@
+<h3>Add a shoe store</h3>
+
+<div class="row">
+  <div class="col-sm-6">
+    <form action="/add_store" method="post">
+      <div class="form-group">
+        <label>store name</label><br>
+        <input type="text" name="store_name">
+        <button type="submit" class='btn'>Add</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-sm-6">
+    <% if @stores.any? %>
+      <ul>
+        <% @stores.each do |store| %>
+          <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+        <% end %>
+      </ul>
+      <p><em>click a store to edit/delete store, or to view shoe brands at that store</em></p>
+    <% else %>
+      <p><em>there are no stores yet</em></p>
+    <% end %>
+  </div>
+</div>
