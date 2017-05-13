@@ -57,6 +57,12 @@ Installation is quick and easy!
 * Activerecord
 * Rake
 
+## Known Bugs
+None known.
+
+## Support and contact details
+
+For support, questions, comments or ideas contact Sara: saschultz8@gmail.com
 
 ## Authors
 
