@@ -7,7 +7,7 @@ describe 'the shoe store path', {:type => :feature} do
     fill_in 'store_name', :with => 'New store'
     click_button 'Add'
   end
-  it 'allows the user to update the name of a store' do
+  it 'allows the user to update the name of a store from the all_stores path' do
     visit '/all_stores'
     click_link 'here'
     fill_in 'store_name', :with => 'New store'
