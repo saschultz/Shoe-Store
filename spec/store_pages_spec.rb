@@ -17,4 +17,13 @@ describe 'the shoe store path', {:type => :feature} do
     click_button 'Update'
     expect(page).to have_content 'Cool New Store'
   end
+  it 'allows the user to delete a store' do
+    visit '/all_stores'
+    click_link 'here'
+    fill_in 'store_name', :with => 'New store'
+    click_button 'Add'
+    click_link 'New Store'
+    click_button 'Delete Store'
+    page.has_xpath? 'add/store'
+  end
 end
