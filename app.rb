@@ -16,11 +16,11 @@ end
 
 post '/add_store' do
   store_name = params["store_name"]
-  @store = Store.create(name: store_name)
+  @store = Store.new(name: store_name)
   if @store.save
     redirect '/add_store'
   else
-    @error_message = "store name already added"
+    erb :error
   end
 end
 

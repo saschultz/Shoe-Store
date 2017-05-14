@@ -11,8 +11,8 @@ describe Store do
 
   it 'validates the store name is unique before saving it' do
     test_store = Store.create name: 'SAS Shoes'
-    test_store2 = Store.create name: 'SAS Shoes'
-    expect(test_store.save).to(eq(false))
+    test_store2 = Store.new name: 'SAS Shoes'
+    expect(test_store2.save).to(eq(false))
   end
 
   it 'ensures the length of a store name is at most 100 characters' do
