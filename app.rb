@@ -58,11 +58,11 @@ end
 post '/add_brand' do
   brand_name = params['brand_name']
   price = params['price']
-  @brand = Brand.create(name: brand_name, price: price)
+  @brand = Brand.new(name: brand_name, price: price)
   if @brand.save
     redirect 'add_brand'
   else
-    @error_message = "brand name already added"
+    erb :error
   end
 end
 
