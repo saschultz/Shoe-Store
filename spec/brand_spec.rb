@@ -10,8 +10,9 @@ describe Brand do
   end
 
   it 'validates the brand name is unique before saving it' do
-    test_brand = Brand.create name: 'Vans'
-    test_brand2 = Brand.create name: 'Vans'
+    test_brand = Brand.new name: 'Vans'
+    test_brand.save
+    test_brand2 = Brand.new name: 'Vans'
     expect(test_brand2.save).to(eq(false))
   end
 

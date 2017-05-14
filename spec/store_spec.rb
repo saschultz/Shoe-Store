@@ -10,7 +10,8 @@ describe Store do
   end
 
   it 'validates the store name is unique before saving it' do
-    test_store = Store.create name: 'SAS Shoes'
+    test_store = Store.new name: 'SAS Shoes'
+    test_store.save
     test_store2 = Store.new name: 'SAS Shoes'
     expect(test_store2.save).to(eq(false))
   end
